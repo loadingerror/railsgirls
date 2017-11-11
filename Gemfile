@@ -12,6 +12,9 @@ gem 'rails', '~> 5.1.4'
 gem 'sqlite3'
 #gem para fazer upload de arquivos
 gem 'carrierwave'
+gem 'mini_magick'
+#mini magick
+gem 'devise'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets

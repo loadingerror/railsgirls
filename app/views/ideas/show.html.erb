@@ -1,19 +1,17 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @idea.name %>
-</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @idea.description %>
-</p>
+<div class="row">
+  <div class="col-md-9">
+    <%= image_tag(@idea.piture_url, width: '100%') if @idea.piture.present? %>
+  </div>
 
-<p>
-  <strong>Piture:</strong>
-  <%= image_tag(@idea.piture_url, width: 600) if @idea.piture.present? %>
-</p>
-
-<%= link_to 'Edit', edit_idea_path(@idea) %> |
-<%= link_to 'Back', ideas_path %>
+  <div class="col-md-3">
+    <p><b>Nome: </b><%= @idea.name %></p>
+    <p><b>Descrição: </b><%= @idea.description %></p>
+    <p>
+      <%= link_to 'Editar', edit_idea_path(@idea) %> |
+      <%= link_to 'Apagar', @idea, data: { confirm: 'Você tem certeza?' }, method: :delete %> |
+      <%= link_to 'Voltar', ideas_path %>
+    </p>
+  </div>
+</div>
